@@ -8,12 +8,12 @@ import { featuresReducer } from './state/reducers';
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
-const monsterReducer = combineReducers({
-  features: featuresReducer,
-})
+// const monsterReducer = combineReducers({
+//   features: featuresReducer,
+// })
 
 const store = createStore(
-  monsterReducer,
+  featuresReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
