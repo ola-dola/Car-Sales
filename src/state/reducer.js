@@ -1,3 +1,5 @@
+import { BUY_ITEM, REMOVE_FEATURE } from "./actionTypes";
+
 const initialState = {
   additionalPrice: 0,
   car: {
@@ -16,7 +18,31 @@ const initialState = {
 };
 
 function reducer(state = initialState, action) {
-  return state
+  console.log(action);
+  switch (action.type) {
+    case BUY_ITEM:
+      return {
+        ...state,
+        additionalPrice: state.additionalPrice + action.payload.price,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.payload],
+        },
+      };
+    case REMOVE_FEATURE:
+      return {
+        ...state,
+        additionalPrice: state.additionalPrice - action.payload.price,
+        car: {
+          ...state.car,
+          features: state.car.features.filter(
+            (feature) => feature.name != action.payload.name
+          ),
+        },
+      };
+    default:
+      return state;
+  }
 }
 
 export default reducer;

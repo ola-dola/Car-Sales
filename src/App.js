@@ -1,19 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 
 import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
-const App = ({state}) => {
-  const removeFeature = (item) => {
-    // dispatch an action here to remove an item
-  };
-
-  const buyItem = (item) => {
-    // dipsatch an action here to add an item
-  };
+const App = () => {
+  const state = useSelector((state) => state);
 
   return (
     <div className="boxes">
@@ -31,7 +25,9 @@ const App = ({state}) => {
 
 function mapStateToProps(state) {
   return {
-    state: state
-  }
+    state: state,
+  };
 }
-export default connect(mapStateToProps, {})(App);
+// export default connect(mapStateToProps, {})(App);
+// Refactored to use Redux hooks
+export default App;
