@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
@@ -23,11 +23,11 @@ const App = () => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    state: state,
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     state: state,
+//   };
+// }
 // export default connect(mapStateToProps, {})(App);
 // Refactored to use Redux hooks
 export default App;

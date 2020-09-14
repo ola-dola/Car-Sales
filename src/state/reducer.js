@@ -36,7 +36,7 @@ function reducer(state = initialState, action) {
         car: {
           ...state.car,
           features: state.car.features.filter(
-            (feature) => feature.name != action.payload.name
+            (feature) => feature.name !== action.payload.name
           ),
         },
       };

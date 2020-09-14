@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { buyItem } from "../state/actionCreators";
 
 const AdditionalFeature = ({feature}) => {
